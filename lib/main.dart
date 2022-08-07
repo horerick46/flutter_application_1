@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 void main(){
   runApp(MaterialApp(
@@ -10,11 +11,32 @@ class HomePage extends StatelessWidget{
   Widget build(BuildContext content){
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: Text("CSE-CS"),
+        backgroundColor: Colors.deepOrange,
+        title: Center(child: Text("CSE-CS")),
       ),
-      body: Container(
-        child: Center(child:Text(" flutter code"))
+      body: Container(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Center(child: Text("DASHBOARD",style: TextStyle(color: Colors.white),),),
+              decoration: BoxDecoration(color: Colors.deepOrange),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text(" DATA"),
+            ),
+            ListTile(
+              leading: Icon(Icons.poll),
+              title: Text(" POLL"),
+            ),
+            ListTile(
+              leading: Icon(Icons.power),
+              title: Text(" LOG OUT"),
+            ),
+          ],
+        )
       ),
     );
   }
